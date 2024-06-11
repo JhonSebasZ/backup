@@ -1,0 +1,66 @@
+2024-01-21T22:44:51
+docker run -d -e POSTGRES_PASSWORD=password postgres:bullseye : ejecutar un contenedor de manera automatica con la images establecesida
+docker pull ubuntu: extraer la una imagen
+docker run <nombreImagen>: ejecutar contenedor
+docker run -d -e POSTGRES_PASSWORD=password --name bullseye_container  postgres:bullseye
+docker images = listar todas las imagenes presentes en la maquina
+docker ps = listar los contenedores que estan encendidos
+docker ps -a = listar todos los contenedores, incluyendo los que esten en pausa	
+docker rm <idcontainer> : eliminar container
+docker rm -f 3b2bc9cc0db1: formar eliminacion
+docker rmi <imageId>: eliminar una imagen
+docker stop <idcontenedor>: pausar contenedor 
+docker start <idContenedor>: iniciar contenedor 
+docker restart <idContenedor>: reiniciar contenedor  
+docker exec -t <idContenedor> sh: ejecutar comandos dentro del contenedor que esta en ejecucion
+docker logs -f <IdContenedor>: ver lo que esta pasando en el servidro
+docker rm $(docker ps --filter status=exited -q): eliminar con condicional
+docker info: ver toda la informacion del sistema
+
+sudo lsof -i :3306 : ver que servicios tiene ocupando un puerto en especifico
+sudo service mysql stop:  detener un servicio en especifico
+10.10.0.251 ?
+Documents/backups/mysql
+cat backups.sh
+
+sudo ntfsfix /dev/sdb1 : arreglar particion de un servidor
+
+Correr un contenerdor mysql con volumen definido para persistencia de datos
+docker run -d --name database_mysql -e MYSQL_ROOT_PASSWORD=root --network host -v /home/econnabis/Documents/backups/mysql_data:/var/lib/mysql mysql:8.0.30
+
+
+
+docker exec -i database_mysql sh -c 'exec mysql agro_dev -uroot -p"root"' < /home/econnabis/Documents/backups/mysql/backup_db_agro_app/agro_pro.sql
+
+
+
+ssh econnabis@10.10.0.244 HR ANTIGUA
+sudo su
+desde pasillo _"2
+revisar tableros
+
+docker-compose restart
+
+docker-compose down: bajar servidor
+docker-compose up --build -d: contruir servicio
+
+____________________________________________
+servidor de imagenes .244
+
+240
+
+P4ssw0rd!2022
+
+
+rh  10.10.0.245 ACTUAL
+246
+
+crear politica en correo
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+GRANT ALL PRIVILEGES ON glpi.* TO 'root'@'localhost';
+
+jenkins
+githubaction
+
+
